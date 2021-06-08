@@ -1,0 +1,7 @@
+export const landingBg = "#f4f1de"
+export const roadmapBg = "#e07a5f"
+export const contactBg = "#3d405b"
+export const FeaturesBg = "#f2cc8f"
+export const SocialBg = "#81b29a"
+export const textColor = "#000000"
+export const textColorInv = "#ffffff"

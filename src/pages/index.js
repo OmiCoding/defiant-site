@@ -1,29 +1,48 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useContext } from "react"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { CSSTransition } from "react-transition-group"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+import useYPos from "../../utils/hooks/useYPos"
+import useTriggerNav from "../../utils/hooks/useTriggerNav"
+import Showcase from "../components/showcase/Showcase"
+import About from "../components/about/AboutContainer"
+import RoadMap from "../components/road/RMapContainer"
+import { MainWrapper } from "../../styles/general/Wrappers"
+import useResponsive from "../../utils/hooks/useResponsive"
+
+import AppContext from "../context/AppContext"
+import AsideMenu from "../components/aside/AsideMenu"
+import Contact from "../components/contact/ContactContainer"
+import Footer from "../components/footer/FooterContainer"
+
+const IndexPage = () => {
+  const appContext = useContext(AppContext)
+
+  const { aside } = appContext
+
+  useResponsive()
+  useYPos()
+  useTriggerNav()
+
+  return (
+    <>
+      <MainWrapper>
+        <Showcase />
+        <About />
+        <Contact />
+        <Footer />
+      </MainWrapper>
+      <CSSTransition
+        in={aside}
+        appear={aside}
+        unmountOnExit
+        timeout={400}
+        classNames={"overlay"}
+      >
+        <AsideMenu />
+      </CSSTransition>
+    </>
+  )
+}
 
 export default IndexPage
