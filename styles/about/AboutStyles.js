@@ -36,7 +36,7 @@ export const ContentDivider = styled.div`
   ${mq("tiny", "min")} {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     width: 100%;
   }

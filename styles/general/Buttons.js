@@ -20,43 +20,43 @@ export const MenuBtn = styled(GeneralBtn)`
   z-index: 1;
 `
 
-export const PaperBtn = styled(GeneralBtn)`
-  margin-right: 1rem;
-  background-color: ${props => props.theme.roadmapBg};
-  color: ${props => props.theme.textColorInv};
-  border: 2px solid transparent;
-  border-radius: 2px;
+// export const PaperBtn = styled(GeneralBtn)`
+//   margin-right: 1rem;
+//   background-color: ${props => props.theme.roadmapBg};
+//   color: ${props => props.theme.textColorInv};
+//   border: 2px solid transparent;
+//   border-radius: 2px;
 
-  i {
-    display: inline-block;
-    margin-right: 1.2rem;
-  }
+//   i {
+//     display: inline-block;
+//     margin-right: 1.2rem;
+//   }
 
-  &:hover {
-    color: ${props => props.theme.roadmapBg};
-    background-color: transparent;
-    border-color: ${props => props.theme.roadmapBg};
-    transition: all 400ms ease;
-  }
+//   &:hover {
+//     color: ${props => props.theme.roadmapBg};
+//     background-color: transparent;
+//     border-color: ${props => props.theme.roadmapBg};
+//     transition: all 400ms ease;
+//   }
 
-  ${mq("tiny", "min")} {
-    padding: 1rem 1.2rem;
-    font-size: ${props => props.theme.helperText};
-  }
-  ${mq("tablet", "min")} {
-    padding: 1.2rem 1.5rem;
-    font-size: ${props => props.theme.header5};
-  }
-`
+//   ${mq("tiny", "min")} {
+//     padding: 1rem 1.2rem;
+//     font-size: ${props => props.theme.helperText};
+//   }
+//   ${mq("tablet", "min")} {
+//     padding: 1.2rem 1.5rem;
+//     font-size: ${props => props.theme.header5};
+//   }
+// `
 
-export const AboutBtn = styled(PaperBtn)`
-  background-color: transparent;
-  border: 2px solid ${props => props.theme.roadmapBg};
-  color: ${props => props.theme.roadmapBg};
+// export const AboutBtn = styled(PaperBtn)`
+//   background-color: transparent;
+//   border: 2px solid ${props => props.theme.roadmapBg};
+//   color: ${props => props.theme.roadmapBg};
 
-  &:hover {
-    color: ${props => props.theme.textColorInv};
-    background-color: ${props => props.theme.roadmapBg};
-    transition: all 400ms ease;
-  }
-`
+//   &:hover {
+//     color: ${props => props.theme.textColorInv};
+//     background-color: ${props => props.theme.roadmapBg};
+//     transition: all 400ms ease;
+//   }
+// `

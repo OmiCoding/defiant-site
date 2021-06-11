@@ -100,18 +100,96 @@ export const BtnWrapper = styled.div`
   display: flex;
   margin-top: 1.2rem;
 
+  a:nth-of-type(2n) {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid ${props => props.theme.roadmapBg};
+    color: ${props => props.theme.roadmapBg};
+    font-family: ${props => props.theme.headingFont};
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    margin-right: 1rem;
+    line-height: 1.3;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.textColorInv};
+      background-color: ${props => props.theme.roadmapBg};
+      transition: all 400ms ease;
+    }
+  }
+
   ${mq("tiny", "min")} {
     width: 90%;
+    a:nth-of-type(2n) {
+      padding: 1rem 1.2rem;
+      font-size: ${props => props.theme.helperText};
+    }
   }
 
   ${mq("tablet", "min")} {
     width: 60%;
+    a:nth-of-type(2n) {
+      padding: 1.2rem 1.5rem;
+      font-size: ${props => props.theme.header5};
+    }
   }
 
   ${mq("desktopS", "min")} {
     width: 100%;
   }
 `
+
+export const PaperBtn = styled.a`
+  display: inline-block;
+  background-color: ${props => props.theme.roadmapBg};
+  color: ${props => props.theme.textColorInv};
+  font-family: ${props => props.theme.headingFont};
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  margin-right: 1rem;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  i {
+    display: inline-block;
+    margin-right: 1.2rem;
+  }
+
+  &:hover {
+    color: ${props => props.theme.roadmapBg};
+    background-color: transparent;
+    border-color: ${props => props.theme.roadmapBg};
+    transition: all 400ms ease;
+  }
+
+  ${mq("tiny", "min")} {
+    padding: 1rem 1.2rem;
+    font-size: ${props => props.theme.helperText};
+  }
+  ${mq("tablet", "min")} {
+    padding: 1.2rem 1.5rem;
+    font-size: ${props => props.theme.header5};
+  }
+`
+
+// a:nth-of-type(2) {
+
+// }
+
+// export const AboutBtn = styled(PaperBtn)`
+//   background-color: transparent;
+//   border: 2px solid ${props => props.theme.roadmapBg};
+//   color: ${props => props.theme.roadmapBg};
+
+//   &:hover {
+//     color: ${props => props.theme.textColorInv};
+//     background-color: ${props => props.theme.roadmapBg};
+//     transition: all 400ms ease;
+//   }
+// `
 
 export const LogoWrapper = styled.div`
   display: flex;

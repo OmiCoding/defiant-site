@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import {
   PitchWrapper,
@@ -11,9 +12,10 @@ import {
   BtnWrapper,
   Logo,
   DefiantSVG,
+  PaperBtn,
 } from "../../../styles/showcase/ShowcaseStyles"
 import { MaxWrapper } from "../../../styles/general/Wrappers"
-import { AboutBtn, PaperBtn } from "../../../styles/general/Buttons"
+// import { PaperBtn } from "../../../styles/general/Buttons"
 
 function Showcase() {
   return (
@@ -27,11 +29,11 @@ function Showcase() {
               </Heading>
               <Description>Coming Soon...</Description>
               <BtnWrapper>
-                <PaperBtn>
+                <PaperBtn href="pdf file path">
                   <i className="fas fa-file" />
                   Whitepaper
                 </PaperBtn>
-                <AboutBtn>Learn More</AboutBtn>
+                <Link to="#about">Learn More</Link>
               </BtnWrapper>
             </PitchWrapper>
             <LogoWrapper>

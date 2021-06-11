@@ -30,15 +30,15 @@ function ContactContainer() {
             <MediaHeader>Mail</MediaHeader>
           </MediaDivider>
           <MediaDivider>
-            <Link to="telegramlocation">
+            <a href="https://t.me/defianttoken">
               <i className="fab fa-telegram-plane" />
-            </Link>
+            </a>
             <MediaHeader>Telegram</MediaHeader>
           </MediaDivider>
           <MediaDivider>
-            <Link to="twitterlocation">
+            <a href="https://twitter.com/DEFIANTtoken">
               <i className="fab fa-twitter" />
-            </Link>
+            </a>
             <MediaHeader>Twitter</MediaHeader>
           </MediaDivider>
         </MediaWrapper>
