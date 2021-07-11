@@ -8,6 +8,7 @@ import {
   Header,
   LogoWrapper,
   NavWrapper,
+  HeaderWrapper,
   NavList,
   ListItem,
   NavMenu,
@@ -15,8 +16,6 @@ import {
   HamburgerContent,
   Logo,
 } from "../../../styles/nav/NavStyles"
-
-import { MaxWrapper } from "../../../styles/general/Wrappers"
 
 import { MenuBtn } from "../../../styles/general/Buttons"
 
@@ -26,7 +25,7 @@ function NavContainer() {
   const { aside, asideMenu } = appContext
   return (
     <Header>
-      <MaxWrapper>
+      <HeaderWrapper>
         <ContentWrapper>
           <LogoWrapper>
             <Logo />
@@ -43,13 +42,7 @@ function NavContainer() {
                 <Link to="#features">Features</Link>
               </ListItem>
               <ListItem>
-                <Link to="#road">Roadmap</Link>
-              </ListItem>
-              <ListItem>
-                <Link to="#faq">FAQ</Link>
-              </ListItem>
-              <ListItem>
-                <Link to="#social">Social</Link>
+                <Link to="#contact">Contact</Link>
               </ListItem>
             </NavList>
             <NavMenu>
@@ -67,7 +60,7 @@ function NavContainer() {
             </NavMenu>
           </NavWrapper>
         </ContentWrapper>
-      </MaxWrapper>
+      </HeaderWrapper>
     </Header>
   )
 }

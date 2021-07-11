@@ -1,69 +1,103 @@
 import styled from "@emotion/styled"
 import { mq } from "../../utils"
-
-export const ContactSection = styled.section`
-  width: 100%;
-  padding: 150px 0;
-  background-color: ${props => props.theme.contactBg};
-`
+import ChatAntsSVG from "../../assets/chat-ants-final-opti.svg"
 
 export const ContactWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
   height: 100%;
-  margin: 0 auto;
-  color: ${props => props.theme.textColorInv};
+  width: 100%;
+  background-color: ${props => props.theme.landingBg};
+  min-height: 100vh;
+  max-height: min-content;
+`
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  max-content: min-content;
 
   ${mq("tiny", "min")} {
-    padding: 0 0.5rem;
+    flex-direction: column;
+    padding: 3rem 0.5rem;
+  }
+
+  ${mq("desktopS", "min")} {
+    flex-direction: row;
+    height: 100%;
+    padding: 0;
+  }
+`
+
+export const TextDivider = styled.div`
+  opacity: 0;
+  transform: translateX(-200px);
+  ${mq("tiny", "min")} {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  ${mq("tablet", "min")} {
+    padding: 0 3rem;
   }
 
   ${mq("desktopS", "min")} {
     width: 50%;
+    min-height: 100vh;
+    padding: 150px 0;
+  }
+
+  &.text-appear,
+  &.text-enter {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  &.text-appear-active,
+  &.text-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 800ms ease;
+  }
+  &.text-appear-done,
+  &.text-enter-done {
+    opacity: 1;
+    transform: translateX(0);
   }
 `
 
 export const ContactHeader = styled.h2`
   font-size: ${props => props.theme.header2};
   font-family: ${props => props.theme.headingFont};
-
+  color: ${props => props.theme.roadmapBg};
+  text-align: center;
+  width: 100%;
   margin-bottom: 1rem;
-
-  ${mq("tiny", "min")} {
-    text-align: center;
-    width: 100%;
-  }
-
-  ${mq("desktopS", "min")} {
-    text-align: left;
-    width: 100%;
-  }
 `
 
 export const ContactDescription = styled.p`
-  font-size: ${props => props.theme.header5};
+  text-align: center;
 
   ${mq("tiny", "min")} {
-    text-align: center;
+    width: 100%;
   }
 
   ${mq("tablet", "min")} {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
   }
 
   ${mq("desktopS", "min")} {
-    text-align: left;
     width: 100%;
-    margin: 0;
+    font-size: ${props => props.theme.header3};
   }
 `
 
 export const ContactDivider = styled.div`
   height: 2px;
-  background-color: ${props => props.theme.textColorInv};
+  background-color: ${props => props.theme.roadmapBg};
 
   ${mq("tiny", "min")} {
     width: 90%;
@@ -106,7 +140,7 @@ export const MediaDivider = styled.div`
     height: 100px;
     a {
       display: inline-block;
-      color: ${props => props.theme.textColorInv};
+      color: ${props => props.theme.roadmapBg};
       i {
         font-size: 2.5rem;
       }
@@ -123,6 +157,8 @@ export const MediaDivider = styled.div`
 `
 
 export const MediaHeader = styled.h4`
+  color: ${props => props.theme.roadmapBg};
+
   ${mq("tiny", "min")} {
     font-size: ${props => props.theme.helperText};
     margin-top: 1rem;
@@ -131,4 +167,70 @@ export const MediaHeader = styled.h4`
   ${mq("tablet", "min")} {
     font-size: ${props => props.theme.header4};
   }
+`
+
+export const SVGDivider = styled.div`
+  position: relative;
+  ${mq("tiny", "min")} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0;
+    margin
+  }
+
+  ${mq("desktopS", "min")} {
+    width: 50%;
+    min-height: 100vh;
+    padding: 150px;
+  }
+`
+
+export const SVGWrapper = styled.div`
+  opacity: 0;
+  transform: translateX(-200px);
+
+  ${mq("tiny", "min")} {
+    width: 284px;
+    height: 336px;
+  }
+
+  ${mq("tablet", "min")} {
+    width: 527px;
+    height: 624px;
+  }
+
+  ${mq("desktopS", "min")} {
+    position: absolute;
+    top: 10%;
+    left: -25%;
+    width: 640px;
+    height: 768px;
+  }
+
+  &.svg-appear,
+  &.svg-enter {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  &.svg-appear-active,
+  &.svg-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 800ms ease;
+  }
+
+  &.svg-appear-done,
+  &.svg-enter-done {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
+export const ChatAnts = styled(ChatAntsSVG)`
+  width: 100%;
+  height: 100%;
 `

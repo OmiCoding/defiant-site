@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
             width: 100%;
             font-family: ${defaultTheme.primaryFont};
             color: ${defaultTheme.textColor};
+            background-color: ${defaultTheme.landingBg};
             overflow-x: hidden;
           }
 

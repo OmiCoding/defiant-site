@@ -9,6 +9,8 @@ function AppProvider({ children }) {
     aside: false,
     device: null,
     aNav: null,
+    section: "showcase",
+    passed: 1,
   })
 
   function trigNavFunc(data) {
@@ -38,6 +40,8 @@ function AppProvider({ children }) {
         aside: state.aside,
         device: state.device,
         aNav: state.aNav,
+        section: state.section,
+        passed: state.passed,
         trigNavFunc: trigNavFunc,
         asideMenu: asideMenu,
         asideNav: asideNav,

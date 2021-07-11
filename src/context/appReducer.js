@@ -1,4 +1,11 @@
-import { TRIGGER_ASIDE, TRIGGER_NAV, ASIDE_NAV, DESKTOP, MOBILE } from "./types"
+import {
+  TRIGGER_ASIDE,
+  TRIGGER_NAV,
+  ASIDE_NAV,
+  ACTIVE_SECTION,
+  DESKTOP,
+  MOBILE,
+} from "./types"
 
 function appReducer(state, action) {
   switch (action.type) {
@@ -26,6 +33,66 @@ function appReducer(state, action) {
         ...state,
         aside: false,
         aNav: action.data,
+      }
+
+    case ACTIVE_SECTION:
+      if (action.data === "showcase") {
+        if (state.passed < 1) {
+          return {
+            ...state,
+            section: action.data,
+            passed: state.passed + 1,
+          }
+        } else {
+          return {
+            ...state,
+            section: action.data,
+          }
+        }
+      } else if (action.data === "about") {
+        if (state.passed < 2) {
+          return {
+            ...state,
+            section: action.data,
+            passed: state.passed + 1,
+          }
+        } else {
+          return {
+            ...state,
+            section: action.data,
+          }
+        }
+      } else if (action.data === "features") {
+        if (state.passed < 3) {
+          return {
+            ...state,
+            section: action.data,
+            passed: state.passed + 1,
+          }
+        } else {
+          return {
+            ...state,
+            section: action.data,
+          }
+        }
+      } else if (action.data === "contact") {
+        if (state.passed < 4) {
+          return {
+            ...state,
+            section: action.data,
+            passed: state.passed + 1,
+          }
+        } else {
+          return {
+            ...state,
+            section: action.data,
+          }
+        }
+      } else {
+        return {
+          ...state,
+          section: action.data,
+        }
       }
 
     case DESKTOP:

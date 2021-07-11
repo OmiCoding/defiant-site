@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-import { mq } from "../../utils"
 
 export const GeneralBtn = styled.button`
   font-family: ${props => props.theme.headingFont};

@@ -43,17 +43,7 @@ function AsideMenu() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="#road" onClick={() => handleClick("#road")}>
-                Roadmap
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link to="#faq" onClick={() => handleClick("#faq")}>
-                FAQ
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link to="#social" onClick={() => handleClick("#social")}>
+              <Link to="#contact" onClick={() => handleClick("#contact")}>
                 Social
               </Link>
             </ListItem>

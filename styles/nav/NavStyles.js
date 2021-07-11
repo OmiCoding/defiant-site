@@ -22,6 +22,19 @@ export const Header = styled.header`
   z-index: 5;
 `
 
+export const HeaderWrapper = styled.div`
+  ${mq("tiny", "min")} {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  ${mq("desktopS", "min")} {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+`
+
 export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
