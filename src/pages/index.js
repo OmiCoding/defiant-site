@@ -20,14 +20,12 @@ import useAppear from "../../utils/hooks/useAppear"
 const IndexPage = () => {
   const appContext = useContext(AppContext)
 
-  const { aside, section } = appContext
+  const { aside, section, passed } = appContext
 
   useResponsive()
   useYPos()
   useTriggerNav()
   useAppear()
-
-  console.log(section)
 
   return (
     <>

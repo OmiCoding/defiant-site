@@ -4,7 +4,7 @@ import AppContext from "../../src/context/AppContext"
 function useAppear() {
   const appContext = useContext(AppContext)
 
-  const { section, dispatch } = appContext
+  const { section, dispatch, passed } = appContext
 
   return useEffect(() => {
     let yPos = document.documentElement.style.getPropertyValue("--scroll-y")
@@ -33,7 +33,7 @@ function useAppear() {
           let scrollPos = parseInt(yPos)
           if (
             i !== elemPos.length - 1 &&
-            scrollPos >= elemPos[i].offsetTop &&
+            scrollPos >= elemPos[i].offsetTop - 500 &&
             scrollPos < elemPos[i].nextSibling.offsetTop
           ) {
             if (section !== elemPos[i].id) {
@@ -44,7 +44,7 @@ function useAppear() {
             }
           } else if (
             i === elemPos.length - 1 &&
-            scrollPos >= elemPos[i].offsetTop
+            scrollPos >= elemPos[i].offsetTop - 500
           ) {
             if (section !== elemPos[i].id) {
               dispatch({
@@ -66,42 +66,55 @@ function useAppear() {
           "section#showcase, section#about, section#features, section#contact"
         )
 
-        if (
-          scrollPos >= elemPos[0].offsetTop &&
-          scrollPos < elemPos[0].nextSibling.offsetTop
-        ) {
-          if (section !== elemPos[0].id) {
-            return dispatch({
-              type: "ACTIVE_SECTION",
-              data: "showcase",
-            })
+        if (passed === 1) {
+          if (
+            scrollPos >= elemPos[0].offsetTop - 500 &&
+            scrollPos < elemPos[0].nextSibling.offsetTop
+          ) {
+            if (section !== elemPos[0].id) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "showcase",
+              })
+            } else if (passed === 1) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "showcase",
+              })
+            }
           }
-        } else if (
-          scrollPos >= elemPos[1].offsetTop &&
-          scrollPos < elemPos[1].nextSibling.offsetTop
-        ) {
-          if (section !== elemPos[1].id) {
-            return dispatch({
-              type: "ACTIVE_SECTION",
-              data: "about",
-            })
+        } else if (passed === 2) {
+          if (
+            scrollPos >= elemPos[1].offsetTop - 500 &&
+            scrollPos < elemPos[1].nextSibling.offsetTop
+          ) {
+            if (section !== elemPos[1].id) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "about",
+              })
+            }
           }
-        } else if (
-          scrollPos >= elemPos[2].offsetTop &&
-          scrollPos < elemPos[2].nextSibling.offsetTop
-        ) {
-          if (section !== elemPos[2].id) {
-            return dispatch({
-              type: "ACTIVE_SECTION",
-              data: "features",
-            })
+        } else if (passed === 3) {
+          if (
+            scrollPos >= elemPos[2].offsetTop - 500 &&
+            scrollPos < elemPos[2].nextSibling.offsetTop
+          ) {
+            if (section !== elemPos[2].id) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "features",
+              })
+            }
           }
-        } else if (scrollPos >= elemPos[3].offsetTop) {
-          if (section !== elemPos[3].id) {
-            return dispatch({
-              type: "ACTIVE_SECTION",
-              data: "contact",
-            })
+        } else if (passed === 4) {
+          if (scrollPos >= elemPos[3].offsetTop - 500) {
+            if (section !== elemPos[3].id) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "contact",
+              })
+            }
           }
         }
       }
@@ -114,7 +127,7 @@ function useAppear() {
 
       window.removeEventListener("scroll", scrollListener)
     }
-  }, [section, dispatch])
+  }, [section, dispatch, passed])
 }
 
 export default useAppear

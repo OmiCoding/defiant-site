@@ -37,17 +37,10 @@ function appReducer(state, action) {
 
     case ACTIVE_SECTION:
       if (action.data === "showcase") {
-        if (state.passed < 1) {
-          return {
-            ...state,
-            section: action.data,
-            passed: state.passed + 1,
-          }
-        } else {
-          return {
-            ...state,
-            section: action.data,
-          }
+        return {
+          ...state,
+          section: action.data,
+          passed: state.passed + 1,
         }
       } else if (action.data === "about") {
         if (state.passed < 2) {
