@@ -13,6 +13,7 @@ import useResponsive from "../../utils/hooks/useResponsive"
 
 import AppContext from "../context/AppContext"
 import AsideMenu from "../components/aside/AsideMenu"
+import Tutorial from "../components/tutorial/TutorialContainer"
 import Contact from "../components/contact/ContactContainer"
 import Footer from "../components/footer/FooterContainer"
 import useAppear from "../../utils/hooks/useAppear"
@@ -20,7 +21,7 @@ import useAppear from "../../utils/hooks/useAppear"
 const IndexPage = () => {
   const appContext = useContext(AppContext)
 
-  const { aside, section, passed } = appContext
+  const { aside } = appContext
 
   useResponsive()
   useYPos()
@@ -33,6 +34,7 @@ const IndexPage = () => {
         <Showcase />
         <About />
         <Features />
+        <Tutorial />
         <Contact />
         <Footer />
       </MainWrapper>

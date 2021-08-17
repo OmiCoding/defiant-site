@@ -42,6 +42,9 @@ function NavContainer() {
                 <Link to="#features">Features</Link>
               </ListItem>
               <ListItem>
+                <Link to="#video">How To Buy</Link>
+              </ListItem>
+              <ListItem>
                 <Link to="#contact">Contact</Link>
               </ListItem>
             </NavList>

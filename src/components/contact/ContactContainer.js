@@ -59,7 +59,7 @@ function ContactContainer() {
                 <ContactDivider />
                 <MediaWrapper>
                   <MediaDivider>
-                    <Link to="nothingyet">
+                    <Link to="#showcase">
                       <i className="fas fa-envelope" />
                     </Link>
                     <MediaHeader>Mail</MediaHeader>

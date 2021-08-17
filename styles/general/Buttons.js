@@ -19,6 +19,16 @@ export const MenuBtn = styled(GeneralBtn)`
   z-index: 1;
 `
 
+export const VideoBtn = styled(GeneralBtn)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+`
+
 // export const PaperBtn = styled(GeneralBtn)`
 //   margin-right: 1rem;
 //   background-color: ${props => props.theme.roadmapBg};

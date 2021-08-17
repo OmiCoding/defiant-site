@@ -43,6 +43,12 @@ function appReducer(state, action) {
           passed: state.passed + 1,
         }
       } else if (action.data === "about") {
+        if (state.passed === 1) {
+          return {
+            ...state,
+            passed: 2,
+          }
+        }
         if (state.passed < 2) {
           return {
             ...state,
@@ -56,6 +62,12 @@ function appReducer(state, action) {
           }
         }
       } else if (action.data === "features") {
+        if (state.passed === 1) {
+          return {
+            ...state,
+            passed: 3,
+          }
+        }
         if (state.passed < 3) {
           return {
             ...state,
@@ -68,8 +80,33 @@ function appReducer(state, action) {
             section: action.data,
           }
         }
-      } else if (action.data === "contact") {
+      } else if (action.data === "video") {
+        if (state.passed === 1) {
+          return {
+            ...state,
+            passed: 4,
+          }
+        }
         if (state.passed < 4) {
+          return {
+            ...state,
+            section: action.data,
+            passed: state.passed + 1,
+          }
+        } else {
+          return {
+            ...state,
+            section: action.data,
+          }
+        }
+      } else if (action.data === "contact") {
+        if (state.passed === 1) {
+          return {
+            ...state,
+            passed: 5,
+          }
+        }
+        if (state.passed < 5) {
           return {
             ...state,
             section: action.data,

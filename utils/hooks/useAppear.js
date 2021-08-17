@@ -26,7 +26,7 @@ function useAppear() {
         }
       } else {
         let elemPos = document.body.querySelectorAll(
-          "section#showcase, section#about, section#features, section#contact"
+          "section#showcase, section#about, section#features, section#video, section#contact"
         )
 
         for (let i = 0; i < elemPos.length; i++) {
@@ -63,7 +63,7 @@ function useAppear() {
       if (yPos) {
         let scrollPos = window.scrollY
         let elemPos = document.body.querySelectorAll(
-          "section#showcase, section#about, section#features, section#contact"
+          "section#showcase, section#about, section#features, section#video, section#contact"
         )
 
         if (passed === 1) {
@@ -108,8 +108,20 @@ function useAppear() {
             }
           }
         } else if (passed === 4) {
-          if (scrollPos >= elemPos[3].offsetTop - 500) {
+          if (
+            scrollPos >= elemPos[3].offsetTop - 500 &&
+            scrollPos < elemPos[3].nextSibling.offsetTop
+          ) {
             if (section !== elemPos[3].id) {
+              return dispatch({
+                type: "ACTIVE_SECTION",
+                data: "video",
+              })
+            }
+          }
+        } else if (passed === 5) {
+          if (scrollPos >= elemPos[4].offsetTop - 500) {
+            if (section !== elemPos[4].id) {
               return dispatch({
                 type: "ACTIVE_SECTION",
                 data: "contact",

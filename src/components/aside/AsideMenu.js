@@ -43,6 +43,11 @@ function AsideMenu() {
               </Link>
             </ListItem>
             <ListItem>
+              <Link to="#video" onClick={() => handleClick("#video")}>
+                Video
+              </Link>
+            </ListItem>
+            <ListItem>
               <Link to="#contact" onClick={() => handleClick("#contact")}>
                 Social
               </Link>
