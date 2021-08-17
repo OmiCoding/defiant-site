@@ -25,7 +25,7 @@ module.exports = {
         short_name: `DEFI`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `assets/favicon-defiant.jpg`,
+        icon: `assets/defiant-favicon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
